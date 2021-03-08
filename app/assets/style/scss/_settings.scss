@@ -1,0 +1,72 @@
+@import "./mixins/mixsins";
+
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+input,button,textarea{font-family:inherit;font-size: inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;background-color: transparent;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited,a:hover{text-decoration: none;}
+a{color:inherit;}
+ul li{list-style: none;}
+img{display:block;max-width:100%;vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+.vt-center {
+	display: flex;
+	align-items: center;
+}
+
+.for-table {
+	display: none;
+
+	@include table {
+		display: block;
+	}
+}
+
+.overflow-h {
+	overflow: hidden;
+}
+
+.ob-fit-cover,
+.ob-fit-contain {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-position: center;
+}
+
+.ob-fit-cover {
+	object-fit: cover;
+}
+
+.ob-fit-contain {
+	object-fit: contain;
+}
+
+.for-mobile {
+	display: none;
+
+	@include mobile {
+		display: block;
+	}
+}
+
+.selected-text {
+	color: var(--color2);
+}
+
+.fw-bold {
+	font-weight: 700;
+}
+
+.fw-semiBold {
+	font-weight: 600;
+}

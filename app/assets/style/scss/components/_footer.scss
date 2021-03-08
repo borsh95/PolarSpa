@@ -1,0 +1,140 @@
+footer {
+	--color-text: #f6f6f6;
+
+	position: relative;
+	z-index: 100;
+	margin-top: auto;
+	padding: 50px 0 16px;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: (30/14);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+
+	@include mobile {
+		padding: 25px 0 13px;
+		font-size: 12px;
+		line-height: (22/12);
+	}
+
+	[class*="item-ic--"] {
+		white-space: normal;
+		&::before {
+			transform: translateY(-50%) scale(0.89);
+		
+			@include mobile {
+				transform: translateY(-50%) scale(0.69);
+			}
+		}
+
+		&.item-ic--location {
+			&::before {
+				transform: translateY(-50%) scale(0.75);
+
+				@include mobile {
+					transform: translateY(-50%) scale(0.55);
+				}
+			}
+		}
+	}
+
+@at-root .#{&} {
+	&__top .container {
+		display: grid;
+		grid-template-columns: 240px 160px 260px 270px;
+		justify-content: space-between;
+	
+		@include desctop-min {
+			grid-template-columns: 240px 113px 242px 270px;	
+		}
+		@include table {
+			grid-template-areas: "top-content top-content"
+								 "info catalog"
+								 "bottom-info bottom-info";
+			grid-template-columns: none;	
+		}
+	}
+
+	&__col {
+		display: flex;
+		flex-direction: column;
+
+		&-title {
+			margin-bottom: 30px;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 1;
+		}
+
+		&-item {
+			display: block;
+
+		}
+	}
+
+	&__catalog-link {
+		transition: color $duration;
+
+		&:hover {
+			color: var(--color2);
+		}
+	}
+	
+
+	&__bottom {
+		justify-content: space-between;
+		margin-top: 30px;
+		 padding-top: 16px;
+		 border-top: 1px solid var(--color2);
+
+		 .container {
+			 justify-content: space-between;
+		 }
+
+		 @include mobile {
+			 margin-top: 20px;
+		 }
+	}
+ 
+	@include table {
+		&__col {
+			margin-bottom: 30px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&:nth-of-type(1) {
+				grid-area: top-content;
+			}
+	
+			&:nth-of-type(2) {
+				grid-area: catalog;
+				justify-self: end;
+			}
+	
+			&:nth-of-type(3) {
+				grid-area: info;
+			}
+	
+			&:nth-of-type(4) {
+				grid-area: bottom-info;
+			}
+	
+			&-title {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	@include mobile {
+		&__col {
+			&-title {
+				font-size: 14px;
+				margin-bottom: 20px;
+			}
+		}
+	}	
+}
+
+}

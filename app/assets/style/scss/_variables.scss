@@ -1,4 +1,29 @@
-$font-family: "Montserrat", sans-serif;
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+Переменные
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+	/*Шрифты*/
+	--font-family: "Open Sans", sans-serif;
+
+	/*Размер шрифта*/
+	--font-size-norm: 18px;
+
+	/*Цвета*/
+	--color1: #fff;
+	--color2:  #6ea732;
+	--color-text: #353535;
+	--color-bg: #272727;
+	--color-shadow: #353535;
+	--rtl-gradient: linear-gradient(110deg, rgba(142,176,100,1) 5%, rgba(142,176,100,0.24) 30%, rgba(255,255,255,0) 40%);
+}
+
+
+
+
+//точки остановы
+$bp-desctop: 1920px;
+$bp-desctop-min: 1220px;
+$bp-tablet: 1024px;
 
 /***********************Main*/
 $duration: 0.3s;

@@ -1,14 +1,14 @@
 @import "fonts";
-@import "nullstyle";
-@import "variables";
-@import "mixsins";
+@import "./settings";
+@import "./variables";
+@import "./mixins/mixsins";
 
 html,
 body {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-size: 18px;
     font-weight: 500;
-    color: #fff;
+    color: var(--color-text);
 }
 
 /*--------------------------------Common--------------------------------*/
@@ -16,19 +16,102 @@ body {
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    max-width: 1156px;
+	max-width: 1219px;
+	
+	@include desctop-min {
+        padding-right: 20px;
+        padding-left: 20px;
+        max-width: 1024px;
+    }
 
     @include table {
         padding-right: 20px;
         padding-left: 20px;
-        max-width: 767px;
+        max-width: 768px;
     }
 
     @include mobile {
+        padding-right: 30px;
+        padding-left: 30px;
+        max-width: 100%;
+    }
+   
+	@include tel {
         padding-right: 10px;
         padding-left: 10px;
-        max-width: 100%;
     }
 }
 
+.global-wrap {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: auto;
+}
+
+
+a[href*="tel"],
+a[href*="mail"] {
+	transition: color $duration;
+
+	&:hover {
+		color: var(--color2);
+	}
+}
+
+.title-1 {
+	font-size: 36px;
+	line-height: (45/36);
+
+	@include table {
+		font-size: 32px;
+	}
+
+	@include mobile {
+		font-size: 26px;
+		line-height: (35/26);
+	}
+}
+
+.title-2 {
+	font-weight: 600;
+	font-size: 32px;
+	line-height: (35/32);
+
+	.line {
+		border-bottom: 2px solid var(--color2);
+	}
+
+	@include table {
+		font-size: 28px;
+	}
+
+	@include mobile {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: (30/20);
+	}
+}
+
+.text {
+	font-size: 18px;
+	line-height: (35/18);
+	font-weight: 300;
+
+	@include table {
+		font-size: 16px;
+	}
+
+	@include mobile {
+		font-size: 14px;
+		line-height: (25/14);
+	}
+}
 /*--------------------------------Other--------------------------------*/
+@import "./components/btns";
+@import "./components/blocks.scss";
+@import "./components/header";
+@import "./components/footer";
+
+//pages
+@import "./pages/index";

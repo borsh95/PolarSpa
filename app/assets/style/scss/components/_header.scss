@@ -1,0 +1,286 @@
+header {
+	$color-shadow: var(--color-shadow);
+
+	position: relative;
+	z-index: 200;
+	box-shadow: 0 0 20px rgba(#353535, 0.27); 
+
+@at-root .#{&} {
+	&-above {
+		min-height: 36px;
+		font-family: var(--font-family);
+		font-weight: 300;
+		line-height: 1;
+		font-size: 14px;
+		color: var(--color1);
+		background-color: var(--color-bg);
+
+		@include mobile {
+			font-size: 12px;
+		}
+
+		&__row:nth-of-type(2) {
+			display: flex;
+			align-items: center;
+			margin-left: auto;
+
+			.header-above__row-item {
+				margin-left: 40px;
+			}
+		}
+
+		&__item.item-ic--mail {
+			margin-right: 25px;
+
+			@include table {
+				margin-right: 0;
+			}
+		}
+
+		&__btn {
+			display: none;
+		}
+
+		@include table {
+			padding: 15px 0 11px;
+
+			&__row:nth-of-type(1) {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			&__row:nth-of-type(2) {
+				flex-direction: column;
+				align-items: flex-end;
+
+				.header-above__row-item {
+					align-items: flex-end;
+					margin-top: 15px;
+					margin-left: 0;
+				}
+			}
+
+			&__item.item-ic--tel {
+				margin-top: 20px;
+			}
+
+			&__sci {
+				margin-left: 20px;
+			}
+
+			&__btn {
+				display: inline-flex;
+				color: var(--color1);
+			}
+		}
+
+		@include mobile {
+		}
+	}	
+
+	&__bottom {
+		position: relative;
+		height: 109px;
+	}
+
+	&__logo {
+		margin-right: auto;
+	}
+
+	&__col {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	&__search-toggle {
+		margin-right: 20px;
+	}
+
+	&__menu {
+		margin-top: 16px;
+	}
+
+	&__btn {
+		margin-left: 39px;
+	}
+
+	@include  table {
+		&__bottom > .container {
+			height: 100%;
+		}
+
+		/*~~~~~~~~~~~~~
+		----------menu*/
+		&__burger {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: -1;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			margin-top: 0;
+			min-height: 100vh;
+			background-color: rgba(255, 255, 255, 0);
+			overflow-x: hidden;
+			overflow-y: auto;
+			visibility: hidden;
+			transition: visibility .1s ease .7s, background-color 0.7s;
+
+			&.active {
+				z-index: 45;
+				background-color: rgba(255, 255, 255, 1);
+				visibility: visible;
+				transition: visibility 0s ease 0s, background-color 0.7s;
+			}
+		}
+
+		&__menu {
+			flex-direction: column;
+			align-items: center;
+			padding-top: 50px;
+
+			.menu__link {
+				margin-right: 0;
+				height: 50px;
+				width: 100%;
+				font-size: 22px;
+				line-height: 50px;
+				text-align: center;
+				background-color: transparent;
+				transform: translateX(-100vw);
+				transition: transform 0.7s, background-color $duration;
+				
+				&:hover {
+					background-color: var(--color2);
+				}
+
+				@for $i from 1 to 8 {
+					@at-root .header__menu .menu__link:nth-of-type(#{$i}) {
+						$delay: (0.02*$i);
+						transition-delay: #{$delay}s;
+					}
+				}
+
+				.header__burger.active & {
+					transform: translateX(0);
+					transition-timing-function: cubic-bezier(0.29, 1.4, 0.44, 0.96);
+					transition-duration: 1s;
+
+					@for $i from 1 to 8 {
+						&:nth-of-type(#{$i}) {
+							$delay: (0.01*$i);
+							transition-delay: #{$delay}s;
+						}
+					}
+				}
+
+				
+			}
+		}
+		/*~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+		/*search*/
+		&__search {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			z-index: 10;
+			width: 728px;
+			height: 100%;
+			opacity: 0;
+			pointer-events: none;
+			background-color: #fff;
+			transform: translateX(-50%);
+			
+			&.active {
+				opacity: 1;
+				pointer-events: all;
+			}
+
+			.search {
+				&__inner {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					height: 100%;
+	
+				}
+	
+				&__btn-submit {
+					flex-shrink: 0;
+					position: relative;	
+					right: auto;
+					top: auto;
+					margin-left: -12px;
+					margin-top: -5px;
+					padding: 12px;
+					width: 24px;
+					height: 24px;
+					transform: none;
+				}
+
+				&__input {
+					flex-shrink: 1;
+					margin-right: auto;
+					height: 100%;
+					width: 100%;
+					min-width: auto;
+					font-size: 16px;
+					border: none;
+				}
+	
+				&__btn-close {
+					flex-shrink: 0;
+					box-sizing: content-box;
+					display: block;
+					padding: 15px 0px 15px 15px;
+				}
+			}
+		}
+
+		&__btn {
+			display: none;
+		}
+	}
+
+	@include  mobile {
+		&__bottom {
+			height: 90px;
+		}
+
+		&__search {
+			left: 0;
+			right: 0;
+			padding: 0 30px;
+			width: 100%;
+			transform: none;
+
+			@include tel {
+				padding: 0 10px;
+			}
+
+			.search {
+				&__btn-submit {
+					width: 18px;
+					height: 18px;
+				}
+
+				&__input {
+					font-size: 14px;
+				}
+
+				&__btn-close {
+					width: 22px;
+					height: 22px;
+				}
+			}
+		}
+	
+	}
+}
+
+
+
+}

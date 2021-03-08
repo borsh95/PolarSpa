@@ -1,0 +1,182 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+MAIN PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.main-page {
+	&__reason {
+		margin-top: 85px;
+	}
+
+	@at-root .comfort {
+		position: relative;
+		padding-bottom: 45px;
+		min-height: 640px;
+		min-height: changeWidch(465, 640, 768, 1920);
+		
+
+		&__bg {
+			right: 0;
+			bottom: 0;
+			width: 720px;
+			height: 570px;
+			background-position: 7px center;
+			
+			@include adaptive($bp-tablet+1, $bp-desctop) {
+				width: changeWidch(460, 720, 1025, 1920);
+				height: changeWidch(364, 570, 1025, 1920);
+				
+			}
+
+			@include table {
+				top: 175px;
+				bottom: auto;
+				width: changeWidch(300, 440, 769, 1024);
+				height: changeWidch(237.5, 348.5, 769, 1024);
+			}
+
+			@include mobile {
+				flex-shrink: 0;
+				position: static;
+				margin-right: -30px;
+				width: changeWidch(180, 250, 480, 768);
+				height: changeWidch(142.54, 197.975, 480, 768);;
+				background-position: 3px center;
+			}
+
+			@include tel {
+				margin-right: -10px;
+			}
+		}
+
+		&__content {
+			width: 690px;
+		}
+
+		&__text {
+			width: 90%;
+		}
+
+		@include desctop-min {
+			&__content {
+				width: 590px;
+			}
+		}
+
+		@include table {
+			padding:  50px 60px;
+			&__content {
+				width: auto;
+			}
+
+			&__text {
+				margin-top: 45px;
+				text-align: left;
+				width: 62%;
+			}
+		}
+
+		@include mobile {
+			padding: 49px 0 55px;
+			min-height: auto;
+
+			&__subtitle {
+				font-weight: 400;
+			}
+
+			&__text {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 23px;
+				width: auto;
+			}
+		}
+	}
+
+	@at-root .usability {
+		position: relative;
+		margin-top: 45px;
+		padding-bottom: 115px;
+		min-height: changeWidch(326, 550, 480, 1920);
+
+		&__bg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+		}
+
+		&__content {
+			margin-left: auto;
+			width: 580px;
+		}
+
+		@include table {
+			&__content {
+				width: auto;
+			}
+		}
+
+		@include mobile {
+			margin-top: 0;
+			padding-bottom: 75px;
+			min-height: auto;
+
+			&__bg {
+				background-position: -102px center;
+			}
+		}
+	}
+
+	&__advantages {
+		margin-top: -92px;
+
+		@include mobile {
+			margin-top: -60px;
+		}
+	}
+
+	@at-root .beauty {
+		position: relative;
+		margin-top: 62px;
+		padding-top: 60px;
+		min-height: 817px;
+		overflow: hidden;
+
+		.container {
+			position: relative;
+		}
+
+		&__bgCirc {
+			position: absolute;
+			top: -61px;
+			right: -67px;
+			z-index: -1;
+		}
+
+		&__content {
+			width: 520px;
+		}
+
+		&__col {
+			margin-top: 40px;
+			width: 385px;
+		}
+		&__circle {
+			display: inline-block;
+			margin-right: 21px;
+			width: 66px;
+			height: 66px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			overflow: hidden;
+			border-radius: 50%;
+			box-shadow: 0 0 9px rgba(117, 176, 41, 0.70);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
