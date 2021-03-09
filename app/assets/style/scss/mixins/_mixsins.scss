@@ -34,6 +34,6 @@
     }
 }
 
-@function changeWidch($minW, $maxW, $minScrin, $maxScrin) {
+@function changeWidth($minW, $maxW, $minScrin, $maxScrin) {
 	@return calc(#{$minW}px + (#{$maxW} - #{$minW})*((100vw - #{$minScrin}px)/(#{$maxScrin} - #{$minScrin})));
 }
