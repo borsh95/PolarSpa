@@ -26,18 +26,37 @@
 	}
 }
 
-.btn--spall {
-	@extend %baseOption;
-	padding: 0 53px;
+%btnSmall {
+	padding: 0 26px;
 	height: 37px;
-	min-width: 166px;
+	min-width: 167px;
 	font-size: 16px;
 	line-height: 37px;
 	font-weight: 400;
+	border-radius: 18.5px;
+	
+}
+
+.btn--small {
+	@extend %baseOption;
+	@extend %btnSmall;
 	color: var(--color1);
 	text-transform: uppercase;
 	background-color: var(--color2);
-	border-radius: 18.5px;
+	border: 2px solid var(--color2);
+	transition: background-color $duration, color $duration;
+
+	&:hover {
+		color: var(--color2);
+		background-color: var(--color1);
+	}
+}
+
+.btn-white--small {
+	@extend %baseOption;
+	@extend %btnSmall;
+	background-color: var(--color1);
+	box-shadow: 0 0 9px rgba(117, 176, 41, 0.38);
 }
 
 .btn_white {
