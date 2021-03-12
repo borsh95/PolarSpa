@@ -20,19 +20,23 @@ footer {
 	[class*="item-ic--"] {
 		white-space: normal;
 		&::before {
-			transform: translateY(-50%) scale(0.89);
+			top: 6px;
+			transform: scale(0.89);
 		
 			@include mobile {
-				transform: translateY(-50%) scale(0.69);
+				top: 3px;
+				transform: scale(0.69);
 			}
 		}
 
 		&.item-ic--location {
 			&::before {
-				transform: translateY(-50%) scale(0.75);
+				top: 1px;
+				transform: scale(0.75);
 
 				@include mobile {
-					transform: translateY(-50%) scale(0.55);
+					top: -2px;
+					transform: scale(0.55);
 				}
 			}
 		}

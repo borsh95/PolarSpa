@@ -35,6 +35,14 @@
 	font-weight: 400;
 	border-radius: 18.5px;
 	
+	@include mobile {
+		padding: 0 8px;
+		height: 27px;
+		min-width: 118px;
+		font-size: 11.3px;
+		line-height: 27px;
+		border-radius: 13.5px;
+	}
 }
 
 .btn--small {
