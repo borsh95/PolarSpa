@@ -10,12 +10,23 @@
 </head>
 
 <body>
+	<!------- modal window --------->
+	<div class="v-modal active">
+		<form action="#" class="v-form">
+			<div class="v-form__close v-modal__close"></div>
+			<h4 class="v-form__title">Оставьте заявку!</h4>
+			<div class="v-form__subtitle">и наш менеджер свяжется с вами в ближайшее время</div>
+			<input class="v-form__input" type="text" name="username" placeholder="Ваше имя">
+			<input class="v-form__input" type="tel" name="tel" placeholder="Ваш телефон">
+			<input class="v-form__input" type="email" name="email" placeholder="Ваш e-mail">
+			<textarea class="v-form__textarea" name="message" placeholder="Сообщение"></textarea>
+			<button class="v-form__btn btn" type="submit">Отправить</button>
+		</form>
+	</div>
+	<!------- PAGE --------->
 	<div class="global-wrap main-page">
 		<!-- ARROW-DOWN -->
 		<div class="v-up">
-			<span class="v-up__arrow-top"></span>
-			<span class="v-up__arrow-bottom"></span>
-			<span></span>
 		</div>
 		<!-- HEADER -->
 		<header>
@@ -82,13 +93,13 @@
 
 						<div class="header__burger">
 							<nav class="header__menu menu">
-								<a class="menu__link" href="#">Купели</a>
-								<a class="menu__link" href="#">Печи</a>
-								<a class="menu__link" href="#">Оборудование</a>
-								<a class="menu__link" href="#">Сотрудничество</a>
-								<a class="menu__link" href="#">Портфолио</a>
-								<a class="menu__link" href="#">Блог</a>
-								<a class="menu__link" href="#">Контакты</a>
+								<a class="menu__link" href="./kupeli.html">Купели</a>
+								<a class="menu__link" href="./pechi.html">Печи</a>
+								<a class="menu__link" href="./oborudovaniye.html">Оборудование</a>
+								<a class="menu__link" href="./collaboration.html">Сотрудничество</a>
+								<a class="menu__link" href="./portfolio.html">Портфолио</a>
+								<a class="menu__link" href="./blog.html">Блог</a>
+								<a class="menu__link" href="./contacts.html">Контакты</a>
 							</nav>
 						</div>
 					</div>
@@ -101,12 +112,14 @@
 		<main>
 			<section class="main__utp utp overflow-h">
 				<div class="container">
-					<div class="utp__video">
-						<div class="utp__video-inner">
-							<video class="ob-fit-cover" autoplay loop muted src="./assets/img/pages/index/video.mp4"
-								poster="assets/img/pages/index/bg-video.jpg">
-								<source src="./assets/img/pages/index/video.mp4" type="video/mp4">
-							</video>
+					<div class="utp__video-wrapp">
+						<div class="utp__video">
+							<div class="utp__video-inner">
+								<video class="ob-fit-cover" autoplay loop muted
+									poster="assets/img/pages/index/bg-video.jpg">
+									<source src="./assets/img/pages/index/video.mp4" type="video/mp4">
+								</video>
+							</div>
 						</div>
 					</div>
 					<div class="utp__content">
@@ -901,10 +914,12 @@
 			<div class="footer__top">
 				<div class="container">
 					<div class="footer__col">
-						<div class="footer__col-title">ООО "КОМПОЗИТ ГРУПП"</div>
+						<div class="footer__col-title">
+							ООО "КОМПОЗИТ ГРУПП" <br>
+							УНП&nbsp;00000000
+						</div>
 						<div class="footer__col-text">
-							Производство купелей и бассейнов в Республике Беларусь. Лучшие цены, доставка, установка и
-							последующие обслуживание. Гарантия на герметичность чаши 25 лет.
+							Производство купелей и бассейнов в Республике Беларусь.
 						</div>
 					</div>
 					<div class="footer__col">
@@ -929,6 +944,7 @@
 						<div class="footer__col-title">ПРОИЗВОДСТВО POLARSPA</div>
 						<div class="footer__col-text">
 							За 10 лет работы бренд POLARSPA прочно обосновался на лидерских позициях по продаже купелей.
+							Лучшие цены, доставка, установка и последующие обслуживание.
 						</div>
 					</div>
 				</div>

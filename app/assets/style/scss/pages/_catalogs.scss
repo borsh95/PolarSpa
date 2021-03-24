@@ -1,0 +1,24 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+CATALOG PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.catalog-page {
+	&__title {
+		margin-bottom: 50px;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	&__info {
+		margin-top: 95px;
+	}
+
+	@include mobile {
+		&__title {
+			margin-bottom: 30px;
+		}
+
+		&__info {
+			margin-top: 70px;
+		}
+	}
+}

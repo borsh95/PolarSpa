@@ -1,0 +1,76 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+ERROR PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.error-page {
+	height: 1px;
+
+	main {
+		padding: 125px 30px 70px;
+		height: 100%;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position: left top;
+	}
+
+	&__title {
+		font-weight: 300;
+		font-size: 187px;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	&__subtitle {
+		margin-top: 30px;
+		font-weight: 300;
+		font-size: 50px;
+		line-height: (56/50);
+		text-transform: uppercase;
+	}
+
+	&__btn {
+		margin-top: 70px;
+		
+		&.btn {
+			height: 40px;
+			min-width: 185px;
+			font-weight: 700;
+			font-size: 19px;
+			line-height: 40px;
+		}
+	}
+
+	@include table {
+		&__title {
+			font-size: 140px;
+		}
+	
+		&__subtitle {
+			margin-top: 27px;
+			font-size: 38px;
+		}
+	
+		&__btn {
+			margin-top: 55px;
+		}
+	}
+
+	@include mobile {
+		main {
+			padding: 100px 30px 50px;
+		}
+
+		&__title {
+			font-size: 110px;
+		}
+	
+		&__subtitle {
+			margin-top: 25px;
+			font-size: 21px;
+		}
+	
+		&__btn {
+			margin-top: 35px;
+		}
+	}
+}

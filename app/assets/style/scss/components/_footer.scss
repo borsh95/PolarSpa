@@ -1,3 +1,6 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+FOOTER
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
 footer {
 	--color-text: #f6f6f6;
 
@@ -67,7 +70,7 @@ footer {
 			margin-bottom: 30px;
 			font-weight: 400;
 			font-size: 18px;
-			line-height: 1;
+			line-height: 1.4;
 		}
 
 		&-item {
@@ -79,8 +82,13 @@ footer {
 	&__catalog-link {
 		transition: color $duration;
 
+		&.active,
 		&:hover {
 			color: var(--color2);
+		}
+
+		@at-root span#{&}:hover {
+			color: var(--color-text);
 		}
 	}
 	

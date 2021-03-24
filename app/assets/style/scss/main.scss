@@ -8,7 +8,24 @@ body {
     font-family: var(--font-family);
     font-size: 18px;
     font-weight: 500;
-    color: var(--color-text);
+	color: var(--color-text);
+	scrollbar-color: var(--color2) #fff;
+	/* «цвет ползунка» «цвет полосы скроллбара» */
+	scrollbar-width: thin;
+	/* толщина */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 10px; /* ширина для вертикального скролла */
+    height: 10px; /* высота для горизонтального скролла */
+    background-color: #fff;
+}
+
+html::-webkit-scrollbar-thumb, 
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color2);
+	box-shadow: inset 1px 1px 10px rgba(0,0,0,0.15);
 }
 
 /*--------------------------------Common--------------------------------*/
@@ -47,6 +64,31 @@ body {
 	flex-direction: column;
 	min-height: 100%;
 	overflow: auto;
+
+	.bread-crumb {
+		margin: 24px 0 36px;
+	}
+}
+
+h1 {
+	margin-bottom: 57px;
+	font-weight: 300;
+
+	@include mobile {
+		margin-bottom: 30px;
+	}
+}
+
+.global-wrap:not(.main-page):not(.collaboration-page):not(.trank-page):not(.error-page) main {
+	padding: 0 0 70px;
+
+	@include table {
+		padding: 68px 0 50px;
+	}
+
+	@include mobile {
+		padding: 50px 0 50px;
+	}
 }
 
 
@@ -58,6 +100,8 @@ a[href*="mail"] {
 		color: var(--color2);
 	}
 }
+
+
 
 .title-1 {
 	font-size: 36px;
@@ -93,6 +137,12 @@ a[href*="mail"] {
 	}
 }
 
+.title-4 {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: (25/18);
+}
+
 .text {
 	font-size: 18px;
 	line-height: (35/18);
@@ -109,9 +159,16 @@ a[href*="mail"] {
 }
 /*--------------------------------Other--------------------------------*/
 @import "./components/btns";
-@import "./components/blocks.scss";
+@import "./components/blocks";
 @import "./components/header";
 @import "./components/footer";
 
 //pages
 @import "./pages/index";
+@import "./pages/catalogs";
+@import "./pages/potfolio";
+@import "./pages/collaboration";
+@import "./pages/contacts";
+@import "./pages/trank";
+@import "./pages/error";
+@import "./pages/blog";

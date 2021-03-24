@@ -1,9 +1,37 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+HEADER
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
 header {
 	$color-shadow: var(--color-shadow);
 
 	position: relative;
 	z-index: 200;
 	box-shadow: 0 0 20px rgba(#353535, 0.27); 
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 80;
+		animation-name: showHeader;
+		animation-duration: $duration;
+
+		& + * {
+			padding-top: 112px;
+		}
+	}
+
+	@keyframes showHeader {
+		0% {
+			opacity: 0;
+			top: -70;
+		}
+		100% {
+			opacity: 1;
+			top: 0;
+		}
+	}
 
 @at-root .#{&} {
 	&-above {
@@ -74,13 +102,31 @@ header {
 			}
 		}
 
-		@include mobile {
+		@media (max-width: 395px) {
+			&__row:nth-of-type(1) {
+				align-self: flex-start;
+			}
+
+			&__row:nth-of-type(2) {
+				flex-direction: column;
+				align-items: flex-end;
+
+				.header-above__row-item {
+					flex-direction: column;
+					margin-left: auto;
+				}
+			}
+
+			&__sci {
+				margin-top: 15px;
+			}
 		}
 	}	
 
 	&__bottom {
 		position: relative;
 		height: 109px;
+		background-color: var(--color1);
 	}
 
 	&__logo {
@@ -121,12 +167,12 @@ header {
 			flex-direction: column;
 			width: 100%;
 			margin-top: 0;
-			min-height: 100vh;
+			height: calc(100vh - 200px);
 			background-color: rgba(255, 255, 255, 0);
 			overflow-x: hidden;
 			overflow-y: auto;
 			visibility: hidden;
-			transition: visibility .1s ease .7s, background-color 0.7s;
+			transition: visibility .1s ease .7s, background-color 1s;
 
 			&.active {
 				z-index: 45;
@@ -139,6 +185,7 @@ header {
 		&__menu {
 			flex-direction: column;
 			align-items: center;
+			margin-top: 0;
 			padding-top: 50px;
 
 			.menu__link {
@@ -150,10 +197,11 @@ header {
 				text-align: center;
 				background-color: transparent;
 				transform: translateX(-100vw);
-				transition: transform 0.7s, background-color $duration;
+				transition: transform 0.7s, background-color $duration, color 0.7s;
 				
 				&:hover {
 					background-color: var(--color2);
+					color: var(--color1);
 				}
 
 				@for $i from 1 to 8 {

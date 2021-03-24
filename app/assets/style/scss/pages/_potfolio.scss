@@ -1,0 +1,16 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+PORTFOLIO PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.portfolio-page {
+	&__title {
+		margin-bottom: 57px;
+		font-weight: 300;
+	}
+
+	@include mobile {
+		&__title {
+			margin-bottom: 30px;
+		}
+	}
+
+}

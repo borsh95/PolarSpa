@@ -1,0 +1,59 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+CONTACTS PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.contacts-page {
+	&__content {
+		display: flex;
+		justify-content: space-between;
+
+		&-col {
+			width: calc(50% - 48px);
+		}
+	}
+
+	@at-root .contacts-form {
+		&__title {
+			margin-bottom: 35px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+	.contacts__item {
+		font-size: 16px;
+		line-height: 1.944;
+
+		&::before {
+			top: -2px;
+		}
+	}
+
+	@include desctop-min {
+		&__content {
+			&-col {
+				width: calc(50% - 20px);
+			}
+		}
+	}
+
+	@include table {
+		&__content {
+			flex-direction: column;
+			justify-content: flex-start;
+	
+			&-col {
+				width: auto;
+
+				&:last-child {
+					margin-top: 55px;
+				}
+			}
+		}
+	}
+
+	@include mobile {
+		.contacts__item {
+			font-size: 14px;
+		}
+	}
+}

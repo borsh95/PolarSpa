@@ -1,0 +1,53 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+COLLOBORATION PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.collaboration-page {
+	main {
+		padding: 70px 0 0;
+	}
+
+	&__title {
+		margin-bottom: 50px;
+		font-weight: 300;
+	}
+
+	&__benefit-list {
+		margin-top: 74px;
+	}
+
+	&__full-double {
+		margin-top: 95px;
+	}
+
+	#map * {
+		touch-action: auto
+	}	
+
+	.my-balloon {
+		margin:-37px 0 0 20px;width: 170px;font-weight: 600;font-size: 16px;color:#b41715;
+	}
+	
+	@include table {
+		main {
+			padding: 68px 0 0;
+		}
+
+		&__benefit-list {
+			margin-top: 50px;
+		}
+	}
+
+	@include mobile {
+		main {
+			padding: 50px 0 0;
+		}
+
+		&__title {
+			margin-bottom: 35px;
+		}
+
+		&__benefit-list {
+			margin-top: 40px;
+		}
+	}
+}

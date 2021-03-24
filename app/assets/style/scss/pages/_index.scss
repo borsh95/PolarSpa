@@ -170,6 +170,10 @@ MAIN PAGE
 			margin-top: 40px;
 			width: 385px;
 
+			.desc__text {
+				font-size: 16px;
+			}
+
 			&-item:last-child {
 				margin-top: 40px;
 			}
@@ -262,6 +266,10 @@ MAIN PAGE
 			&__col {
 				max-width: 385px;
 				width: auto;
+
+				.desc__text {
+					font-size: 14px;
+				}
 			}
 		}
 	}
@@ -472,8 +480,8 @@ MAIN PAGE
 			padding-bottom: 115px;
 
 			&__bg--small {
-				width: 345px;
-				height: 216.26px;
+				width: 315px;
+				height: 197.26px;
 			}
 		}
 	}
@@ -654,6 +662,7 @@ MAIN PAGE
 	@at-root .useful {
 		position: relative;
 		margin-top: 45px;
+		padding-bottom: 40px;
 		min-height: 745px;
 
 		&__bg {
