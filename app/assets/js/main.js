@@ -81,10 +81,17 @@ if (document.querySelector('.v-up')) {
 
 if (document.querySelector('.v-modal')) {
 	const modalEl = document.querySelector('.v-modal');
-	const btnCloseMadal = modalEl.querySelector('.v-modal__close');
+	const btnOpenModalClass = 'open-modal';
+	const btnCloseModalClass = 'v-modal__close';
 
-	btnCloseMadal.addEventListener('click', function () {
-		if (modalEl.classList.contains('active')) modalEl.classList.remove('active');
+	document.addEventListener('click', function (e) {
+
+		if (e.target.classList.contains(btnOpenModalClass)) {
+			modalEl.classList.add('active');
+		}
+		else if (e.target.classList.contains(btnCloseModalClass) || e.target.classList.contains('v-modal')) {
+			modalEl.classList.remove('active');
+		}
 	});
 }
 
